@@ -1,0 +1,348 @@
+/* ---------------------------------------------------
+ * 0 Document Base Styles
+ * ---------------------------------------------------*/
+:root {
+    --link-color: rgba(10, 47, 158, 1);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    font-family: Muli;
+    margin: 0;
+    color: #151025;
+}
+h1 {
+    text-align: center;
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.section-title {
+    color: white;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+            240deg,
+            rgba(164, 88, 255, 1) 0%,
+            rgba(53, 68, 255, 1) 40%,
+            rgba(10, 47, 158, 1) 80%
+    );
+
+    margin: -6rem -6rem 3rem;
+    padding: 6rem;
+}
+
+blockquote {
+    border-left: 3px solid rgba(164, 88, 255, 1);
+    color: #1a1a1a;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.25em;
+    line-height: 1.5;
+    font-style: italic;
+    margin: 1.1em -4em;
+    padding: 1em 2em;
+    position: relative;
+    transition: 0.2s border ease-in-out;
+    z-index: 0;
+}
+
+blockquote:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -3px;
+    height: 2em;
+    background-color: #efefef;
+    width: 3px;
+    margin-top: -1em;
+}
+
+blockquote:after {
+    content: "\f10d";
+    position: absolute;
+    top: 50%;
+    left: -0.5em;
+    color: rgba(164, 88, 255, 1);
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 0.75em;
+    line-height: 1em;
+    text-align: center;
+    text-indent: -2px;
+    width: 1em;
+    margin-top: -0.5em;
+    transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
+}
+
+cite,
+blockquote cite {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.8em;
+    margin-top: 1em;
+    opacity: 0.8;
+}
+
+cite {
+    margin-top: -2em;
+}
+
+blockquote cite:before {
+    content: "— ";
+}
+
+/* -- Responsive Quote ---------------------------- */
+@media (max-width: 980px) {
+    blockquote.responsive {
+        font-size: 1.1em;
+        margin: 1.1em -2em;
+    }
+}
+
+@media (max-width: 767px) {
+    blockquote.responsive {
+        border-top: 2px solid rgba(164, 88, 255, 1);
+        border-bottom: 2px solid rgba(164, 88, 255, 1);
+        border-left: none;
+        border-radius: 0;
+        margin: 2em 0;
+        padding: 1.5em 1em;
+    }
+
+    blockquote.responsive:before {
+        left: 50%;
+        top: 0;
+        height: 4px;
+        margin-top: -3px;
+        margin-left: -1em;
+        width: 2em;
+    }
+
+    blockquote.responsive:after {
+        font-size: 0.75em;
+        left: 50%;
+        top: 0;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+
+    blockquote.responsive cite {
+        text-align: right;
+    }
+}
+
+/* -- Pull Quote ---------------------------------- */
+blockquote.pullquote {
+    float: right;
+    width: 25%;
+    margin: 0 0em 0 1em;
+}
+
+
+#advanced-quotes blockquote {
+    margin: 0;
+}
+
+/**** slider ****/
+#slider,
+ul {
+    height: 300px;
+    box-sizing: border-box;
+}
+
+#slider {
+    margin: auto;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    position: relative;
+    width: 600px;
+}
+
+#slider:after {
+    content: "\f10d";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    z-index: 10;
+    background: rgba(164, 88, 255, 1);
+    color: white;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    line-height: 3em;
+    text-align: center;
+    width: 4em;
+    height: 4em;
+    border-radius: 4em;
+    padding-top: 1.25em;
+    box-sizing: border-box;
+    top: -2em;
+    margin-left: -2em;
+}
+
+#slider ul {
+    list-style: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 9000px;
+    transition: left 0.3s linear;
+}
+
+#slider li {
+    float: left;
+    position: relative;
+    width: 600px;
+    background-image: linear-gradient(
+            90deg,
+            #efefef 0%,
+            rgba(164, 88, 255, 0.6) 90%
+    );
+}
+
+#slider li blockquote {
+    margin: 0;
+}
+
+#slider li blockquote:after {
+    margin-left: 0.5em;
+}
+
+/*** Content ***/
+.slider-container {
+    height: 300px;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+}
+
+.slider-container p,
+.slider-container cite {
+    flex: 0 0 100%;
+}
+
+/*** target hooks ****/
+@keyframes slide-animation-three {
+    /* Begin again */
+    0% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 1;
+    }
+    29.3% {
+        left: 0px;
+        opacity: 1;
+    } /* Slide one ready to leave */
+    31.3% {
+        opacity: 0.6;
+    }
+    33.3% {
+        left: -600px;
+        opacity: 1;
+    } /* Slide two in */
+    62.6% {
+        left: -600px;
+        opacity: 1;
+    } /* Slide two ready to leave */
+    64.6% {
+        opacity: 0.6;
+    }
+    66.6% {
+        left: -1200px;
+        opacity: 1;
+    } /* Third slide in */
+    95% {
+        opacity: 1;
+    }
+    99% {
+        left: -1200px;
+        opacity: 0;
+    } /* Fade out last slide */
+    100% {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+#slider ul {
+    /*   -webkit-animation: slide-animation-four 25s infinite; */
+    animation: slide-animation-three 20s infinite;
+    /*   -webkit-animation: slide-animation-three 20s infinite; */
+}
+
+/* use to paused the content on mouse over */
+#slider ul:hover {
+    animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes slide-animation-four {
+    /* Begin again */
+    0% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 1;
+    }
+    20% {
+        left: 0px;
+        opacity: 1;
+    } /* Slide one ready to leave */
+    22.5% {
+        opacity: 0.6;
+    }
+    25% {
+        left: -600px;
+        opacity: 1;
+    } /* Slide two in */
+    45% {
+        left: -600px;
+        opacity: 1;
+    } /* Slide two ready to leave */
+    47.5% {
+        opacity: 0.6;
+    }
+    50% {
+        left: -1200px;
+        opacity: 1;
+    } /* Slide three in */
+    70% {
+        left: -1200px;
+        opacity: 1;
+    } /* Slide three ready to leave */
+    72.5% {
+        opacity: 0.6;
+    }
+    75% {
+        left: -1800px;
+        opacity: 1;
+    } /* Fourth slide in */
+    95% {
+        opacity: 1;
+    }
+    98% {
+        left: -1800px;
+        opacity: 0;
+    } /* Fade out last slide */
+    100% {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+
